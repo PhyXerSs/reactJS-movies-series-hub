@@ -14,9 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Trending/>} exact />
         <Route path="/movies" element={<Movie/>} exact/>
-        {/* <Route path="/movies/id:" element={<ContentDetail/>}/> */}
         <Route path="/series" element={<TvSeries/>} exact/>
-        {/* <Route path="/series/id:" element={<ContentDetail/>}/> */}
         <Route path="/search" element={<Search/>} exact/>
         <Route path="/details/:type/:id" element={<ContentDetail/>}/>
       </Routes>

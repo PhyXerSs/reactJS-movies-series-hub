@@ -23,13 +23,14 @@ function TvSeries() {
     }
 
     async function fetchTvSeries(){
-        const { data } = await axios.get(TvSeriesData(page,genres))
+        const { data } = await axios.get(TvSeriesData(page,genresForURL))
         setContent(data.results);
         setBannerImg(data.results[randomNum(data.results.length-1)]?.backdrop_path);
         setNumerOfPage(data.total_pages);
     }
     useEffect(()=>{
         window.scroll(0,0);
+        console.log(genresForURL);
         fetchTvSeries();
     },[page,genresForURL])
 
