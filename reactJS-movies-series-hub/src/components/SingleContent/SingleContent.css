@@ -1,0 +1,62 @@
+.single-content{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px ;
+    margin-bottom: 20px;
+    width: 220px;
+    position: relative;
+    font-family: 'Roboto',sans-serif;
+    border-radius: 15px;
+    color: white;
+    background-color: #191A19;
+    transition: 0.5s all;
+    box-shadow: #111 1px 7px 9px 1px;
+}
+
+.single-content:hover{
+    background-color: greenyellow;
+    transform: scale(1.05);
+    cursor: pointer;
+    text-shadow: 0px 2px 2.5px #000000;
+}
+
+.MuiBadge-colorPrimary{
+    background-color: #4E9F3D !important;
+    font-weight: 700 !important;
+}
+.MuiBadge-colorSecondary{
+    
+    font-weight: 700 !important;
+}
+
+.single-content > img{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.detail-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    
+    font-size: 16px;
+    font-weight: 100;
+}

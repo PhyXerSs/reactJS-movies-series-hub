@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  scroll-behavior: smooth;
+}
+
+html{
+  background-color: #272c2f;
+}
+.App{
+  background-color: #272c2f;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center; */
+  /* background-color: black; */
+  /* min-height: 100vh; */
+  
+  
+  /* z-index: -1; */
+}

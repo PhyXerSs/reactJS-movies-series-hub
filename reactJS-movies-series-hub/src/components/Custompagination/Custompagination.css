@@ -1,0 +1,17 @@
+.MuiPaginationItem-root{
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+.MuiPaginationItem-root:hover{
+    background-color: rgba(100, 100, 100, 0.829) !important;
+}
+
+.Mui-selected{
+    background-color: rgba(172, 255, 47, 0.219) !important;
+}
+
+.pagination{
+    margin-bottom: 10px !important;
+}

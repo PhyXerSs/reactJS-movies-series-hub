@@ -1,0 +1,22 @@
+.genres{
+    max-width: 1350px;
+    padding: 6px 0;
+    margin-top: 20px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+
+
+.MuiChip-colorPrimary{
+    background-color: transparent !important;
+    color: white !important;
+    border: 1px solid white !important;
+    transition: 0.5s all !important;
+}
+
+.MuiChip-colorPrimary:hover{
+    background-color: yellowgreen !important;
+    border: 1px solid yellowgreen  !important;
+}
