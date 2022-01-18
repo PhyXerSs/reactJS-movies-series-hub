@@ -26,7 +26,21 @@ function Genres({
     }
     function handleRemove(genre){
         setSelectedGenres(selectedGenres.filter((selected)=>selected.id !==genre.id));
-        setGenres([...genres,genre]);
+        let newGenres = [...genres,genre]
+        let newNameGenres = newGenres.map((genre)=>genre.name)
+        newNameGenres.sort()
+        
+        let genresSortByName = []
+        newNameGenres.forEach((nameGenre)=>{
+            newGenres.forEach((genre)=>{
+                if(nameGenre === genre.name){
+                    genresSortByName.push(genre)
+                }
+            })
+        })
+        setGenres(genresSortByName);
+        
+        
         setPage(1);
     }
 
