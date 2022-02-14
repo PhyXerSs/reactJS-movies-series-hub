@@ -3,12 +3,16 @@ import React from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import { img_300, noPicture } from '../../config/config'
 import './SingleContent.css'
-
+import { motion } from 'framer-motion'
 
 function SingleContent({id,type,title,poster,date,vote}) {
     const navigate = useNavigate();
     return (
-        <div className="single-content" 
+        <motion.div layout
+            animate={{opacity : 1}}
+            initial={{opacity : 0}}
+            exit = {{opacity : 0}}
+        className="single-content" 
             onClick={()=>{
                 navigate(`/details/${type}/${id}`)
             }}
@@ -29,7 +33,7 @@ function SingleContent({id,type,title,poster,date,vote}) {
                 </div>
             </div>
             
-        </div>
+        </motion.div>
     )
 }
 

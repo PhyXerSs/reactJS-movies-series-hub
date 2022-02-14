@@ -5,6 +5,7 @@ import Custompagination from '../components/Custompagination/Custompagination';
 import SingleContent from '../components/SingleContent/SingleContent';
 import { SearchMedia } from '../config/api';
 import './Search.css'
+import { motion ,AnimatePresence } from 'framer-motion'
 function Search() {
     const [searchText,setSearchText] = useState('');
     const [content,setContent] = useState(null);
@@ -58,20 +59,22 @@ function Search() {
                 </Tabs>
             </div>
 
-            <div className="movie-series">
+            <motion.div layout className="movie-series">
                 {content && content.map((item,key)=>(
-                    <SingleContent
-                        key={item.id}
-                        id={item.id}
-                        type = {type ? 'tv' : 'movie'}
-                        title={item.title || item.name || item.original_title}
-                        poster = {item.poster_path}
-                        backdrop = {item.backdrop_path}
-                        date = {item.first_air_date || item.release_date}
-                        vote = {item.vote_average}
-                    />
+                    <AnimatePresence>
+                        <SingleContent
+                            key={item.id}
+                            id={item.id}
+                            type = {type ? 'tv' : 'movie'}
+                            title={item.title || item.name || item.original_title}
+                            poster = {item.poster_path}
+                            backdrop = {item.backdrop_path}
+                            date = {item.first_air_date || item.release_date}
+                            vote = {item.vote_average}
+                        />
+                    </AnimatePresence>
                 ))}
-            </div>
+            </motion.div>
             { numberOfPage > 1 && 
                 <Custompagination setPage={setPage} numberOfPage={numberOfPage}/>
             }

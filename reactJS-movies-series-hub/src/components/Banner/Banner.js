@@ -1,8 +1,14 @@
 import React from 'react'
 import './Banner.css'
+import { motion } from 'framer-motion'
 function Banner({pageTitle,bannerImg}) {
     return (
-        <div className="banner"
+        <motion.div 
+            animate={{opacity : 1}}
+            transition={{delay:0.3}}
+            initial={{opacity : 0}}
+            exit = {{opacity : 0}}
+        className="banner"
             style={{
                 backgroundImage:`url(${bannerImg})`,
                 backgroundPosition:'center 0px',
@@ -14,7 +20,7 @@ function Banner({pageTitle,bannerImg}) {
             }}
         >
             <span className="page-title">{pageTitle}</span>
-        </div>
+        </motion.div>
     )
 }
 

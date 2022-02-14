@@ -7,7 +7,7 @@ import SingleContent from '../components/SingleContent/SingleContent';
 import { TrendingData } from '../config/api';
 import { img_backDrop, unavailableLandscape } from '../config/config';
 import './Trending.css';
-
+import { motion ,AnimatePresence } from 'framer-motion'
 
 function Trending() {
     const [page,setPage] = useState(1);
@@ -33,20 +33,22 @@ function Trending() {
     return (
         <div className="trending-page">
             <Banner pageTitle='Trending Today' bannerImg={bannerImg ? `${img_backDrop}/${bannerImg}` : unavailableLandscape}/>
-            <div className="trending">
+            <motion.div layout className="trending">
                 {content && content.map((item,key)=>(
-                    <SingleContent
-                        key={item.id}
-                        id={item.id}
-                        type = {item.media_type}
-                        title={item.title || item.name || item.original_title}
-                        poster = {item.poster_path}
-                        backdrop = {item.backdrop_path}
-                        date = {item.first_air_date || item.release_date}
-                        vote = {item.vote_average}
-                    />
+                    <AnimatePresence>
+                        <SingleContent
+                            key={item.id}
+                            id={item.id}
+                            type = {item.media_type}
+                            title={item.title || item.name || item.original_title}
+                            poster = {item.poster_path}
+                            backdrop = {item.backdrop_path}
+                            date = {item.first_air_date || item.release_date}
+                            vote = {item.vote_average}
+                        />
+                    </AnimatePresence>
                 ))}
-            </div>
+            </motion.div>
             <Custompagination setPage={setPage}/>
         </div>
 

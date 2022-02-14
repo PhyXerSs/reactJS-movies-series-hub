@@ -46,7 +46,7 @@ function Genres({
 
     return (
         <div className="genres">
-            {selectedGenres.map((item,key)=>(
+            {selectedGenres.map((item)=>(
                 <Chip 
                     label={item.name}
                     key={item.id}
@@ -57,7 +57,7 @@ function Genres({
                     onDelete={()=>handleRemove(item)}
                 />
             ))}
-            {genres.map((item,key)=>(
+            {genres.map((item)=>(
                 <Chip
                     label={item.name}
                     key={item.id}

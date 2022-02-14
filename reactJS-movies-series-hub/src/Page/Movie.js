@@ -8,6 +8,7 @@ import SingleContent from '../components/SingleContent/SingleContent';
 import { MovieData } from '../config/api';
 import { img_backDrop, unavailableLandscape } from '../config/config';
 import useGenre from '../hooks/useGenres';
+import { motion ,AnimatePresence } from 'framer-motion'
 import './Movie.css'
 
 
@@ -31,7 +32,7 @@ function Movie() {
         setBannerImg(data.results[randomNum(data.results.length-1)]?.backdrop_path);
     }
 
-    useEffect(()=>{
+    useEffect(()=>{   
         window.scroll(0,0);
         fetchMovies();
     },[page,genresForURL])
@@ -40,7 +41,7 @@ function Movie() {
         return <LinearProgress style={{backgroundColor : 'greenyellow', marginTop:'60px'}}/>
     return (
         <div className="movie-page">
-            <Banner pageTitle='Discover Movies' bannerImg={bannerImg ? `${img_backDrop}/${bannerImg}` : unavailableLandscape}/>
+            {bannerImg && <Banner pageTitle='Discover Movies' bannerImg={bannerImg ? `${img_backDrop}/${bannerImg}` : unavailableLandscape}/>}
             <Genres
                 type="movie"
                 genres={genres}
@@ -49,20 +50,25 @@ function Movie() {
                 setSelectedGenres={setSelectedGenres}
                 setPage={setPage}
             />
-            <div className="movie">
-                {content && content.map((item,key)=>(
-                    <SingleContent
-                        key={item.id}
-                        id={item.id}
-                        type = "movie"
-                        title={item.title || item.name || item.original_title}
-                        poster = {item.poster_path}
-                        backdrop = {item.backdrop_path}
-                        date = {item.first_air_date || item.release_date}
-                        vote = {item.vote_average}
-                    />
-                ))}
-            </div>
+            
+                <motion.div layout className="movie">
+
+                    {content && content.map((item,key)=>(
+                        <AnimatePresence>
+                            <SingleContent
+                                key={item.id}
+                                id={item.id}
+                                type = "movie"
+                                title={item.title || item.name || item.original_title}
+                                poster = {item.poster_path}
+                                backdrop = {item.backdrop_path}
+                                date = {item.first_air_date || item.release_date}                            
+                                vote = {item.vote_average}
+                            />
+                        </AnimatePresence>
+                    ))}
+                </motion.div>
+            
             <Custompagination setPage={setPage} numberOfPage={numberOfPage}/>
         </div>
     )
