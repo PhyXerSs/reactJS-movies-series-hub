@@ -1,5 +1,5 @@
 # reactJS-movies-series-hub
-Live Site:https://movies-series-hub-phyxerss.netlify.app
+Live Site:https://moviehub-phyxerss.netlify.app
 
 Create a Movies and TV Series App in React JS and Material UI with full responsive fuctionality. Use TMDB API for backend.
 
