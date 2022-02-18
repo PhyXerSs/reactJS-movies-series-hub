@@ -41,7 +41,7 @@ function Movie() {
         return <LinearProgress style={{backgroundColor : 'greenyellow', marginTop:'60px'}}/>
     return (
         <div className="movie-page">
-            {bannerImg && <Banner pageTitle='Discover Movies' bannerImg={bannerImg ? `${img_backDrop}/${bannerImg}` : unavailableLandscape}/>}
+            <Banner pageTitle='Discover Movies' bannerImg={bannerImg ? `${img_backDrop}/${bannerImg}` : unavailableLandscape}/>
             <Genres
                 type="movie"
                 genres={genres}
